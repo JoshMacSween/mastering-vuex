@@ -5,8 +5,22 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    user: { id: 'abc123', name: 'Josh MacSween' }
-  },
+    user: { id: 'abc123', name: 'Josh MacSween' },
+    categories: [
+      'sustainability',
+      'nature',
+      'animal welfare',
+      'housing',
+      'education',
+      'food',
+      'community'
+    ]
+  }, // mutations, actions & getters are all outside of state
   mutations: {},
-  actions: {}
+  actions: {},
+  getters: {
+    catLength: state => {
+      return state.categories.length
+    }
+  }
 })
