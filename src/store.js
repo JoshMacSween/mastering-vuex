@@ -15,7 +15,7 @@ export default new Vuex.Store({
       'food',
       'community'
     ],
-    todos: [
+    events: [
       { id: 1, text: 'Bleep', done: true },
       { id: 2, text: 'Blop', done: false },
       { id: 3, text: 'Boop', done: true },
@@ -28,8 +28,11 @@ export default new Vuex.Store({
     catLength: state => {
       return state.categories.length
     },
-    activeTodosCount: state => {
-      return state.todos.filter(todo => !todos.done).length
+    // activeTodosCount: state => {
+    //   return state.todos.filter(todo => !todos.done).length
+    // },
+    getEventById: state => id => {
+      return state.events.find(event => event.id === id)
     }
   }
 })
